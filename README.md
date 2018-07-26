@@ -17,7 +17,7 @@ Grep-based recursive search with better-looking output
 - `./search.sh [-i] [-v] LOCATION QUERY`
 
 ### Example input
-```bash
+```
 ./search.sh workspace hello.*rld
 ./search.sh /tmp/ ".*2018.log"
 ./search.sh -iv .. abcd
