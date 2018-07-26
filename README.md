@@ -1,5 +1,5 @@
 # Bash-search project
-Grep-based search with better-looking output
+Grep-based recursive search with better-looking output
 
 ### Supported systems
 - Linux, Solaris
@@ -9,11 +9,30 @@ Grep-based search with better-looking output
   - `-i` case insensitive
   - `-v` invert match
 
-- **query**
+- **queries**
   - regular expressions
   - OR
-  
-### Example usage
+
+### Usage
+- `./search.sh [-i] [-v] LOCATION QUERY`
+
+### Example input
 ```bash
-search.sh
+./search.sh workspace hello.*rld
+./search.sh /tmp/ ".*2018.log"
+./search.sh -iv .. abcd
+```
+
+### Example output
+```
+../workspace/export/.project
+      10:  <arguments>
+      15:  <arguments>
+../workspace/export/build.xml
+      52:  <arg value="install" />
+../workspace/cetelem-export-danube/renderer/build.xml
+      24:  <attribute name="Built-By" value="${user.name}" />
+      27:  <attribute name="Implementation-Version" value="1.0" />
+      
+5 found
 ```
