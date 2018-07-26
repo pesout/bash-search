@@ -18,9 +18,9 @@ Grep-based recursive search with better-looking output
 
 ### Example input
 ```
-./search.sh workspace hello.*rld[or]goodbye
-./search.sh /tmp/ ".*2018.log"
-./search.sh -iv .. abcd [or] defg
+./search.sh  workspace   hello.*rld[or]goodbye
+./search.sh  /tmp/  ".*2018.log"
+./search.sh  -iv  ..  abcd [or] defg
 ```
 
 ### Example output
