@@ -1,16 +1,29 @@
 #!/usr/bin/env bash
 
+error() {
+    echo
+    echo "Error: $@"
+    echo "Usage: ./search.sh [-i] [-v] PATH QUERY"
+    exit 1
+}
+
 linux() {
+    [ $1 ] || error "No location or search query"
+    [ $2 ] || error "No search query"
 
     while [ "$1" == "-i" -o "$1" == "-v" -o "$1" == "-vi" -o "$1" == "-iv" ]; do
         ARGS="$ARGS $1"
         shift
     done
 
+    [[ ${1:0:1} == "-" ]] && error "Unknown option $1"
+
     [[ $ARGS = *"i"* ]] && FLAGS="i"
 
     DIRECTORY="$1"
     shift
+    
+    test -d "$DIRECTORY" 2>/dev/null || error "This directory does not exist or you do not have access rights"
 
     # Case sensitivity
     QUERY=$(echo $@ |
@@ -54,16 +67,22 @@ linux() {
 }
 
 solaris() {
+    [ $1 ] || error "No location or search query"
+    [ $2 ] || error "No search query"
 
     while [ "$1" == "-i" -o "$1" == "-v" -o "$1" == "-vi" -o "$1" == "-iv" ]; do
         ARGS="$ARGS $1"
         shift
     done
 
+    [[ ${1:0:1} == "-" ]] && error "Unknown option $1"
+
     [[ $ARGS = *"i"* ]] && FLAGS="i"
 
     DIRECTORY="$1"
     shift
+
+    test -d "$DIRECTORY" 2>/dev/null || error "This directory does not exist or you do not have access rights"
 
     # Case sensitivity
     QUERY=$(gecho $@ |
