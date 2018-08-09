@@ -36,5 +36,5 @@ Grep-based recursive search with better-looking output
       24:  <attribute name="Built-By" value="${user.name}" />
       27:  <attribute name="Implementation-Version" value="1.0" />
       
-5 found
+6 found
 ```
