@@ -15,7 +15,7 @@ Grep-based recursive search with better-looking output
 
 ### Usage
 - `chmod 777 search.sh`
-- `./search.sh [-i] [-v] LOCATION QUERY`
+- `./search.sh [-i] [-v] PATH QUERY`
 
 ### Example input
 ```
