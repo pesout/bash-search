@@ -31,7 +31,7 @@ Grep-based recursive search with better-looking output
       15:  <arguments>
 ../workspace/export/build.xml
       52:  <arg value="install" />
-../workspace/cetelem-export-danube/renderer/build.xml
+../workspace/export/renderer/build.xml
       2:   <attribute name="Author" value="${author.name}" />
       24:  <attribute name="Built-By" value="${user.name}" />
       27:  <attribute name="Implementation-Version" value="1.0" />
