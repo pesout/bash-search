@@ -11,7 +11,7 @@ Grep-based recursive search with better-looking output
 
 - **queries**
   - regular expressions
-  - OR
+  - OR (syntax: `query1 [or] query2`)
 
 ### Usage
 - `chmod 777 search.sh`
